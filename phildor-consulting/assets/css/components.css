@@ -1,0 +1,221 @@
+footer {
+  background: #130A25;
+  padding: 0;
+}
+
+.footer-top {
+  padding: 4rem 4rem 3rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo-img {
+  height: 56px;
+  width: auto;
+  display: block;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  transition: opacity 0.2s;
+}
+
+.footer-logo-img:hover {
+  opacity: 1;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+}
+
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.footer-col h4 {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col ul a {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s;
+  font-weight: 300;
+}
+
+.footer-col ul a:hover {
+  color: var(--gold);
+}
+
+.footer-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-contact-item span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-contact-item a,
+.footer-contact-item p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.footer-contact-item a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  padding: 1.5rem 4rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-legal a {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.28);
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+  color: var(--gold);
+}
+
+.footer-powered {
+  padding: 0.75rem 4rem 1.5rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-powered span {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.footer-powered a {
+  color: rgba(201, 168, 76, 0.6);
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.footer-powered a:hover {
+  color: var(--gold);
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 500;
+  border: none;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.scroll-top svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--purple-dark);
+  fill: none;
+  stroke-width: 2;
+}
+
+@media (max-width: 1100px) {
+  .footer-top { grid-template-columns: 1.5fr 1fr 1fr; }
+}
+
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem 2rem;
+    gap: 2.5rem;
+  }
+  .footer-bottom { padding: 1.5rem 2rem 0.75rem; }
+  .footer-powered { padding: 0.75rem 2rem 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-col ul { gap: 0.6rem; }
+}
+
+@media (max-width: 640px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.25rem;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    padding: 1.25rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  .footer-legal { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-powered { padding: 0.75rem 1.25rem 1.5rem; }
+  .footer-logo-img { height: 46px; }
+}
+
+@media (max-width: 380px) {
+  .footer-top { padding: 2rem 1rem; }
+  .footer-bottom { padding: 1rem; }
+  .footer-powered { padding: 0.75rem 1rem 1.5rem; }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="white"/>
+  <polygon points="15,60 30,20 45,60 40,60 30,35 20,60" fill="#006633"/>
+  <rect x="19" y="45" width="22" height="5" fill="#006633"/>
+  <text x="55" y="35" font-family="Arial" font-weight="bold" font-size="13" fill="#006633">NORTHWEST</text>
+  <text x="55" y="52" font-family="Arial" font-size="8" fill="#444">Petroleum and Gas Company</text>
+</svg>

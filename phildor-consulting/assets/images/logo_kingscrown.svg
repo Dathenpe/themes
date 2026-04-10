@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="white"/>
+  <polygon points="30,55 40,30 50,50 60,25 70,50 80,30 90,55" fill="none" stroke="#C9A84C" stroke-width="2.5"/>
+  <rect x="28" y="54" width="64" height="4" fill="#C9A84C" rx="1"/>
+  <text x="100" y="38" font-family="Arial" font-weight="bold" font-size="11" fill="#2a2a4a">KINGSCROWN</text>
+  <text x="100" y="52" font-family="Arial" font-size="8" fill="#666">Oil &amp; Gas Limited</text>
+</svg>
