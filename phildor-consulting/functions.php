@@ -31,9 +31,7 @@ function phildor_enqueue_assets() {
 add_action('wp_enqueue_scripts', 'phildor_enqueue_assets');
 
 function phildor_register_menus() {
-    register_nav_menus([
-        'primary' => 'Primary Navigation',
-    ]);
+    register_nav_menus(['primary' => 'Primary Navigation']);
 }
 add_action('after_setup_theme', 'phildor_register_menus');
 
@@ -41,12 +39,7 @@ function phildor_add_theme_support() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption']);
-    add_theme_support('custom-logo', [
-        'height'      => 100,
-        'width'       => 400,
-        'flex-height' => true,
-        'flex-width'  => true,
-    ]);
+    add_theme_support('custom-logo', ['height' => 100, 'width' => 400, 'flex-height' => true, 'flex-width' => true]);
 }
 add_action('after_setup_theme', 'phildor_add_theme_support');
 
@@ -60,113 +53,37 @@ add_action('admin_bar_menu', 'phildor_clean_admin_bar_new_menu', 999);
 
 function phildor_register_post_types() {
     register_post_type('team_member', [
-        'labels' => [
-            'name'               => 'Team Members',
-            'singular_name'      => 'Team Member',
-            'add_new'            => 'Add Team Member',
-            'add_new_item'       => 'Add New Team Member',
-            'edit_item'          => 'Edit Team Member',
-            'new_item'           => 'New Team Member',
-            'view_item'          => 'View Team Member',
-            'search_items'       => 'Search Team Members',
-            'not_found'          => 'No team members found',
-            'not_found_in_trash' => 'No team members found in Trash',
-        ],
-        'public'       => false,
-        'show_ui'      => true,
-        'show_in_menu' => true,
-        'menu_icon'    => 'dashicons-id',
-        'menu_position'=> 20,
-        'supports'     => ['title', 'thumbnail'],
-        'rewrite'      => false,
+        'labels' => ['name' => 'Team Members', 'singular_name' => 'Team Member', 'add_new' => 'Add Team Member', 'add_new_item' => 'Add New Team Member', 'edit_item' => 'Edit Team Member', 'new_item' => 'New Team Member', 'view_item' => 'View Team Member', 'search_items' => 'Search Team Members', 'not_found' => 'No team members found', 'not_found_in_trash' => 'No team members found in Trash'],
+        'public' => false, 'show_ui' => true, 'show_in_menu' => true, 'menu_icon' => 'dashicons-id', 'menu_position' => 20, 'supports' => ['title', 'thumbnail'], 'rewrite' => false,
     ]);
 
     register_post_type('pcl_project', [
-        'labels' => [
-            'name'               => 'Projects',
-            'singular_name'      => 'Project',
-            'add_new'            => 'Add Project',
-            'add_new_item'       => 'Add New Project',
-            'edit_item'          => 'Edit Project',
-            'new_item'           => 'New Project',
-            'view_item'          => 'View Project',
-            'search_items'       => 'Search Projects',
-            'not_found'          => 'No projects found',
-            'not_found_in_trash' => 'No projects found in Trash',
-        ],
-        'public'       => false,
-        'show_ui'      => true,
-        'show_in_menu' => true,
-        'menu_icon'    => 'dashicons-building',
-        'menu_position'=> 21,
-        'supports'     => ['title', 'thumbnail'],
-        'rewrite'      => false,
-        'taxonomies'   => ['pcl_project_category'],
+        'labels' => ['name' => 'Projects', 'singular_name' => 'Project', 'add_new' => 'Add Project', 'add_new_item' => 'Add New Project', 'edit_item' => 'Edit Project', 'new_item' => 'New Project', 'view_item' => 'View Project', 'search_items' => 'Search Projects', 'not_found' => 'No projects found', 'not_found_in_trash' => 'No projects found in Trash'],
+        'public' => false, 'show_ui' => true, 'show_in_menu' => true, 'menu_icon' => 'dashicons-building', 'menu_position' => 21, 'supports' => ['title', 'thumbnail'], 'rewrite' => false, 'taxonomies' => ['pcl_project_category'],
     ]);
 
     register_taxonomy('pcl_project_category', 'pcl_project', [
-        'labels' => [
-            'name'          => 'Project Categories',
-            'singular_name' => 'Project Category',
-            'add_new_item'  => 'Add New Category',
-            'edit_item'     => 'Edit Category',
-        ],
-        'public'       => false,
-        'show_ui'      => true,
-        'show_in_menu' => true,
-        'hierarchical' => true,
-        'rewrite'      => false,
+        'labels' => ['name' => 'Project Categories', 'singular_name' => 'Project Category', 'add_new_item' => 'Add New Category', 'edit_item' => 'Edit Category'],
+        'public' => false, 'show_ui' => true, 'show_in_menu' => true, 'hierarchical' => true, 'rewrite' => false,
     ]);
 
     register_post_type('client_logo', [
-        'labels' => [
-            'name'               => 'Client Logos',
-            'singular_name'      => 'Client Logo',
-            'add_new'            => 'Add Client',
-            'add_new_item'       => 'Add New Client',
-            'edit_item'          => 'Edit Client',
-            'new_item'           => 'New Client',
-            'search_items'       => 'Search Clients',
-            'not_found'          => 'No clients found',
-            'not_found_in_trash' => 'No clients found in Trash',
-        ],
-        'public'       => false,
-        'show_ui'      => true,
-        'show_in_menu' => true,
-        'menu_icon'    => 'dashicons-groups',
-        'menu_position'=> 22,
-        'supports'     => ['title', 'thumbnail'],
-        'rewrite'      => false,
+        'labels' => ['name' => 'Client Logos', 'singular_name' => 'Client Logo', 'add_new' => 'Add Client', 'add_new_item' => 'Add New Client', 'edit_item' => 'Edit Client', 'new_item' => 'New Client', 'search_items' => 'Search Clients', 'not_found' => 'No clients found', 'not_found_in_trash' => 'No clients found in Trash'],
+        'public' => false, 'show_ui' => true, 'show_in_menu' => true, 'menu_icon' => 'dashicons-groups', 'menu_position' => 22, 'supports' => ['title', 'thumbnail'], 'rewrite' => false,
     ]);
 
     register_post_type('certification', [
-        'labels' => [
-            'name'               => 'Certifications',
-            'singular_name'      => 'Certification',
-            'add_new'            => 'Add Certification',
-            'add_new_item'       => 'Add New Certification',
-            'edit_item'          => 'Edit Certification',
-            'new_item'           => 'New Certification',
-            'search_items'       => 'Search Certifications',
-            'not_found'          => 'No certifications found',
-            'not_found_in_trash' => 'No certifications found in Trash',
-        ],
-        'public'       => false,
-        'show_ui'      => true,
-        'show_in_menu' => true,
-        'menu_icon'    => 'dashicons-awards',
-        'menu_position'=> 23,
-        'supports'     => ['title', 'thumbnail'],
-        'rewrite'      => false,
+        'labels' => ['name' => 'Certifications', 'singular_name' => 'Certification', 'add_new' => 'Add Certification', 'add_new_item' => 'Add New Certification', 'edit_item' => 'Edit Certification', 'new_item' => 'New Certification', 'search_items' => 'Search Certifications', 'not_found' => 'No certifications found', 'not_found_in_trash' => 'No certifications found in Trash'],
+        'public' => false, 'show_ui' => true, 'show_in_menu' => true, 'menu_icon' => 'dashicons-awards', 'menu_position' => 23, 'supports' => ['title', 'thumbnail'], 'rewrite' => false,
     ]);
 }
 add_action('init', 'phildor_register_post_types');
 
 function phildor_register_meta_boxes() {
-    add_meta_box('team_member_details', 'Team Member Details', 'phildor_team_meta_box_html', 'team_member', 'normal', 'high');
-    add_meta_box('pcl_project_details', 'Project Details',     'phildor_project_meta_box_html', 'pcl_project', 'normal', 'high');
-    add_meta_box('client_logo_details', 'Client Details',      'phildor_client_meta_box_html', 'client_logo', 'normal', 'high');
-    add_meta_box('certification_details', 'Certification Details', 'phildor_cert_meta_box_html', 'certification', 'normal', 'high');
+    add_meta_box('team_member_details',   'Team Member Details',   'phildor_team_meta_box_html',    'team_member',   'normal', 'high');
+    add_meta_box('pcl_project_details',   'Project Details',       'phildor_project_meta_box_html', 'pcl_project',   'normal', 'high');
+    add_meta_box('client_logo_details',   'Client Details',        'phildor_client_meta_box_html',  'client_logo',   'normal', 'high');
+    add_meta_box('certification_details', 'Certification Details', 'phildor_cert_meta_box_html',    'certification', 'normal', 'high');
 }
 add_action('add_meta_boxes', 'phildor_register_meta_boxes');
 
@@ -182,27 +99,31 @@ function phildor_team_meta_box_html($post) {
 }
 
 function phildor_project_meta_box_html($post) {
-    $desc = get_post_meta($post->ID, '_project_desc', true);
-    $cat  = get_post_meta($post->ID, '_project_cat_label', true);
-    $order= get_post_meta($post->ID, '_project_order', true);
+    $desc  = get_post_meta($post->ID, '_project_desc', true);
+    $cat   = get_post_meta($post->ID, '_project_cat_label', true);
+    $order = get_post_meta($post->ID, '_project_order', true);
     wp_nonce_field('phildor_project_save', 'phildor_project_nonce');
     echo '<table style="width:100%;border-collapse:collapse;">';
     echo '<tr><td style="padding:8px 0;font-weight:600;width:140px;">Category Label</td><td><input type="text" name="project_cat_label" value="' . esc_attr($cat) . '" style="width:100%;padding:6px;" placeholder="e.g. LPG Depot, Under Construction"></td></tr>';
     echo '<tr><td style="padding:8px 0;font-weight:600;">Description</td><td><textarea name="project_desc" rows="3" style="width:100%;padding:6px;">' . esc_textarea($desc) . '</textarea></td></tr>';
     echo '<tr><td style="padding:8px 0;font-weight:600;">Display Order</td><td><input type="number" name="project_order" value="' . esc_attr($order) . '" style="width:80px;padding:6px;" placeholder="1"></td></tr>';
     echo '</table>';
-    echo '<p style="color:#666;font-size:12px;margin-top:8px;">Set the featured image above as the project photo. Use the Project Categories box on the right to assign a section (LPG Depot, Piling, etc.).</p>';
+    echo '<p style="color:#666;font-size:12px;margin-top:8px;">Set the featured image above as the project photo. Use the Project Categories box on the right to assign a section.</p>';
 }
 
 function phildor_client_meta_box_html($post) {
-    $order = get_post_meta($post->ID, '_client_order', true);
-    $type  = get_post_meta($post->ID, '_client_type', true);
+    $order   = get_post_meta($post->ID, '_client_order', true);
+    $type    = get_post_meta($post->ID, '_client_type', true);
+    $country = get_post_meta($post->ID, '_client_country', true);
+    $service = get_post_meta($post->ID, '_client_service', true);
     wp_nonce_field('phildor_client_save', 'phildor_client_nonce');
     echo '<table style="width:100%;border-collapse:collapse;">';
-    echo '<tr><td style="padding:8px 0;font-weight:600;width:140px;">Client Type</td><td><select name="client_type" style="padding:6px;width:200px;"><option value="client"' . selected($type, 'client', false) . '>Client</option><option value="foreign_partner"' . selected($type, 'foreign_partner', false) . '>Foreign Partner</option><option value="local_partner"' . selected($type, 'local_partner', false) . '>Local Partner</option></select></td></tr>';
+    echo '<tr><td style="padding:8px 0;font-weight:600;width:140px;">Client Type</td><td><select name="client_type" style="padding:6px;width:200px;"><option value="client"' . selected($type,'client',false) . '>Client</option><option value="foreign_partner"' . selected($type,'foreign_partner',false) . '>Foreign Partner</option><option value="local_partner"' . selected($type,'local_partner',false) . '>Local Partner</option></select></td></tr>';
+    echo '<tr><td style="padding:8px 0;font-weight:600;">Country</td><td><input type="text" name="client_country" value="' . esc_attr($country) . '" style="width:100%;padding:6px;" placeholder="e.g. Spain, France, India"></td></tr>';
+    echo '<tr><td style="padding:8px 0;font-weight:600;">Service / Description</td><td><input type="text" name="client_service" value="' . esc_attr($service) . '" style="width:100%;padding:6px;" placeholder="e.g. Engineering Services &amp; Consultant"></td></tr>';
     echo '<tr><td style="padding:8px 0;font-weight:600;">Display Order</td><td><input type="number" name="client_order" value="' . esc_attr($order) . '" style="width:80px;padding:6px;" placeholder="1"></td></tr>';
     echo '</table>';
-    echo '<p style="color:#666;font-size:12px;margin-top:8px;">Set the featured image above as the client logo. The post Title is the company name shown on hover.</p>';
+    echo '<p style="color:#666;font-size:12px;margin-top:8px;">Title = company name. For Clients, set featured image as the logo. Country and Service are shown for Foreign and Local Partners.</p>';
 }
 
 function phildor_cert_meta_box_html($post) {
@@ -242,8 +163,10 @@ function phildor_save_meta_boxes($post_id) {
     }
 
     if (isset($_POST['phildor_client_nonce']) && wp_verify_nonce($_POST['phildor_client_nonce'], 'phildor_client_save')) {
-        if (isset($_POST['client_type']))  update_post_meta($post_id, '_client_type',  sanitize_text_field($_POST['client_type']));
-        if (isset($_POST['client_order'])) update_post_meta($post_id, '_client_order', absint($_POST['client_order']));
+        if (isset($_POST['client_type']))    update_post_meta($post_id, '_client_type',    sanitize_text_field($_POST['client_type']));
+        if (isset($_POST['client_country'])) update_post_meta($post_id, '_client_country', sanitize_text_field($_POST['client_country']));
+        if (isset($_POST['client_service'])) update_post_meta($post_id, '_client_service', sanitize_text_field($_POST['client_service']));
+        if (isset($_POST['client_order']))   update_post_meta($post_id, '_client_order',   absint($_POST['client_order']));
     }
 
     if (isset($_POST['phildor_cert_nonce']) && wp_verify_nonce($_POST['phildor_cert_nonce'], 'phildor_cert_save')) {
@@ -273,7 +196,7 @@ function phildor_nav_walker_fallback($args) {
 function phildor_get_nav_html() {
     $home_url = home_url('/');
     $logo_url = get_template_directory_uri() . '/assets/images/pcl_logo.png';
-    
+
     $nav_pages = [
         'Home'           => '',
         'About'          => 'about',
@@ -285,40 +208,36 @@ function phildor_get_nav_html() {
         'HSE'            => 'hse',
         'Why Us'         => 'why-us',
     ];
-    
+
     global $post;
     $current_page_id = (is_singular('page')) ? $post->ID : 0;
-    $current_path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+    $current_path    = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
     $out  = '<nav id="navbar">';
     $out .= '<a class="nav-logo" href="' . esc_url($home_url) . '">';
     $out .= '<img src="' . esc_url($logo_url) . '" alt="Phildor Consulting Limited" class="nav-logo-img">';
     $out .= '</a>';
     $out .= '<ul class="nav-links">';
-    
+
     foreach ($nav_pages as $label => $slug) {
         $active = '';
         if ($label === 'Home') {
             $url = $home_url;
-            if (is_front_page() || is_home()) {
-                $active = ' class="active"';
-            }
+            if (is_front_page() || is_home()) $active = ' class="active"';
         } else {
             $page = get_page_by_path($slug);
-            $url = $page ? get_permalink($page) : home_url('/' . $slug . '/');
+            $url  = $page ? get_permalink($page) : home_url('/' . $slug . '/');
             if (($page && $current_page_id === $page->ID) || ($current_path === trim($slug, '/'))) {
                 $active = ' class="active"';
             }
         }
         $out .= '<li><a href="' . esc_url($url) . '"' . $active . '>' . esc_html($label) . '</a></li>';
     }
-    
+
     $out .= '</ul>';
-    
-    $contact_page = get_page_by_path('contact');
-    $contact_url  = $contact_page ? get_permalink($contact_page) : home_url('/contact/');
+    $contact_page   = get_page_by_path('contact');
+    $contact_url    = $contact_page ? get_permalink($contact_page) : home_url('/contact/');
     $contact_active = (is_page('contact') || $current_path === 'contact') ? ' active' : '';
-    
     $out .= '<a class="nav-cta' . $contact_active . '" href="' . esc_url($contact_url) . '">Contact Us</a>';
     $out .= '<button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>';
     $out .= '</nav>';
@@ -327,18 +246,18 @@ function phildor_get_nav_html() {
     foreach ($nav_pages as $label => $slug) {
         $active = '';
         if ($label === 'Home') {
-            $url = $home_url;
+            $url    = $home_url;
             $active = (is_front_page() || is_home()) ? ' class="active"' : '';
         } else {
-            $page = get_page_by_path($slug);
-            $url = $page ? get_permalink($page) : home_url('/' . $slug . '/');
+            $page   = get_page_by_path($slug);
+            $url    = $page ? get_permalink($page) : home_url('/' . $slug . '/');
             if (($page && $current_page_id === $page->ID) || ($current_path === trim($slug, '/'))) {
                 $active = ' class="active"';
             }
         }
         $out .= '<a href="' . esc_url($url) . '"' . $active . '>' . esc_html($label) . '</a>';
     }
-    $contact_mobile_active = (is_page('contact')) ? ' class="active"' : '';
+    $contact_mobile_active = is_page('contact') ? ' class="active"' : '';
     $out .= '<a href="' . esc_url($contact_url) . '"' . $contact_mobile_active . ' style="color:var(--gold);">Contact Us</a>';
     $out .= '</div>';
 
@@ -354,15 +273,15 @@ function phildor_get_footer_html() {
         return $page ? get_permalink($page) : home_url('/' . $slug . '/');
     };
 
-    $about_url   = $get_url('about');
-    $team_url    = $get_url('team');
-    $certs_url   = $get_url('certifications');
-    $hse_url     = $get_url('hse');
-    $services_url= $get_url('services');
-    $projects_url= $get_url('projects');
-    $contact_url = $get_url('contact');
-    $privacy_url = $get_url('privacy-policy');
-    $terms_url   = $get_url('terms-of-use');
+    $about_url    = $get_url('about');
+    $team_url     = $get_url('team');
+    $certs_url    = $get_url('certifications');
+    $hse_url      = $get_url('hse');
+    $services_url = $get_url('services');
+    $projects_url = $get_url('projects');
+    $contact_url  = $get_url('contact');
+    $privacy_url  = $get_url('privacy-policy');
+    $terms_url    = $get_url('terms-of-use');
 
     $out  = '<footer>';
     $out .= '<div class="footer-top">';

@@ -12,18 +12,21 @@ $all_clients = new WP_Query([
     'order'          => 'ASC',
 ]);
 
-$clients         = [];
-$foreign_partners= [];
-$local_partners  = [];
+$clients          = [];
+$foreign_partners = [];
+$local_partners   = [];
 
 if ($all_clients->have_posts()) {
     while ($all_clients->have_posts()) {
         $all_clients->the_post();
-        $type = get_post_meta(get_the_ID(), '_client_type', true);
+        $id   = get_the_ID();
+        $type = get_post_meta($id, '_client_type', true);
         $item = [
-            'id'    => get_the_ID(),
-            'title' => get_the_title(),
-            'thumb' => get_the_post_thumbnail_url(get_the_ID(), 'medium'),
+            'id'      => $id,
+            'title'   => get_the_title(),
+            'thumb'   => get_the_post_thumbnail_url($id, 'medium'),
+            'country' => get_post_meta($id, '_client_country', true),
+            'service' => get_post_meta($id, '_client_service', true),
         ];
         if ($type === 'foreign_partner') {
             $foreign_partners[] = $item;
@@ -63,14 +66,12 @@ if ($all_clients->have_posts()) {
                 <?php if ($client['thumb']) : ?>
                   <img src="<?php echo esc_url($client['thumb']); ?>" alt="<?php echo esc_attr($client['title']); ?>" loading="lazy">
                 <?php else : ?>
-                  <span style="font-size:0.8rem;color:var(--text-light);"><?php echo esc_html($client['title']); ?></span>
+                  <span style="font-size:0.85rem;font-weight:600;color:var(--purple-dark);text-align:center;"><?php echo esc_html($client['title']); ?></span>
                 <?php endif; ?>
               </div>
             <?php endforeach; ?>
           </div>
         </div>
-      <?php else : ?>
-        <p style="color:var(--text-mid);padding:2rem 0 1rem;">No client logos added yet. Go to <strong>Client Logos</strong> in the admin and set the type to <em>Client</em>.</p>
       <?php endif; ?>
 
       <?php if (!empty($foreign_partners)) : ?>
@@ -81,10 +82,13 @@ if ($all_clients->have_posts()) {
           <div class="partners-grid">
             <?php foreach ($foreign_partners as $partner) : ?>
               <div class="partner-card" data-reveal>
-                <?php if ($partner['thumb']) : ?>
-                  <img src="<?php echo esc_url($partner['thumb']); ?>" alt="<?php echo esc_attr($partner['title']); ?>" loading="lazy" style="max-height:60px;object-fit:contain;margin-bottom:0.75rem;">
+                <?php if ($partner['country']) : ?>
+                  <div class="partner-flag"><?php echo esc_html(strtoupper($partner['country'])); ?></div>
                 <?php endif; ?>
                 <div class="partner-name"><?php echo esc_html($partner['title']); ?></div>
+                <?php if ($partner['service']) : ?>
+                  <div class="partner-service"><?php echo esc_html($partner['service']); ?></div>
+                <?php endif; ?>
               </div>
             <?php endforeach; ?>
           </div>
@@ -98,6 +102,9 @@ if ($all_clients->have_posts()) {
             <?php foreach ($local_partners as $partner) : ?>
               <div class="local-card">
                 <h4><?php echo esc_html($partner['title']); ?></h4>
+                <?php if ($partner['service']) : ?>
+                  <p><?php echo esc_html($partner['service']); ?></p>
+                <?php endif; ?>
               </div>
             <?php endforeach; ?>
           </div>
