@@ -23,7 +23,22 @@ function phildor_enqueue_assets() {
     if (is_page('contact')) {
         wp_enqueue_script('emailjs', 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js', [], null, true);
         wp_enqueue_script('phildor-contact-js', $uri . '/assets/js/contact.js', [], $v, true);
-        wp_add_inline_script('emailjs', '(function(){ if(typeof emailjs!=="undefined"){emailjs.init({publicKey:"Ux1E7PBpEoKIBUwNJ"});window.EMAILJS_SERVICE_ID="service_20wg09g";window.EMAILJS_TEMPLATE_ID="template_buytlch";window.EMAILJS_AUTOREPLY_TEMPLATE_ID="template_5spz1zq";window.EMAILJS_AUTOREPLY_SERVICE_ID="service_20wg09g";}})();', 'after');
+        
+        // Actual EmailJS configuration from your HTML file
+        $emailjs_config = "
+            (function(){ 
+                if(typeof emailjs !== 'undefined'){
+                    emailjs.init({
+                        publicKey: 'Ux1E7PBpEoKIBUwNJ'
+                    });
+                    window.EMAILJS_SERVICE_ID = 'service_20wg09g';
+                    window.EMAILJS_TEMPLATE_ID = 'template_buytlch';
+                    window.EMAILJS_AUTOREPLY_TEMPLATE_ID = 'template_5spz1zq';
+                    window.EMAILJS_AUTOREPLY_SERVICE_ID = 'service_20wg09g';
+                }
+            })();
+        ";
+        wp_add_inline_script('emailjs', $emailjs_config, 'after');
     }
 
     wp_enqueue_script('phildor-nav-js', $uri . '/assets/js/nav.js', [], $v, true);

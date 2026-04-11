@@ -28,6 +28,7 @@ $section_bgs = ['bg-offwhite', 'bg-white', 'bg-offwhite', 'bg-purple'];
     <?php foreach ($categories as $i => $cat) : ?>
       <?php
       $bg = $section_bgs[$i % count($section_bgs)];
+      $text_class = ($bg === 'bg-purple') ? 'white' : '';
       $projects = new WP_Query([
           'post_type'      => 'pcl_project',
           'posts_per_page' => -1,
@@ -46,7 +47,7 @@ $section_bgs = ['bg-offwhite', 'bg-white', 'bg-offwhite', 'bg-purple'];
         <div class="container">
           <span class="section-label"><?php echo esc_html($cat->name); ?></span>
           <div class="gold-line"></div>
-          <h2 class="section-title" style="margin-bottom:2.5rem;"><?php echo esc_html($cat->description ?: $cat->name); ?></h2>
+          <h2 class="section-title <?php echo esc_attr($text_class); ?>" style="margin-bottom:2.5rem;"><?php echo esc_html($cat->description ?: $cat->name); ?></h2>
 
           <div class="projects-grid">
             <?php if ($projects->have_posts()) : ?>
