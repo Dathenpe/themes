@@ -33,7 +33,7 @@ $team_query = new WP_Query([
         <p class="section-desc" style="margin-top: 1rem;">Our leadership team brings together decades of frontline experience in the global Oil &amp; Gas and Infrastructure sectors, ensuring every engagement benefits from senior-level oversight and direct accountability. Unlike larger firms, at PCL our principals are directly involved in your project.</p>
       </div>
 
-      <div class="team-grid">
+      <div class="team-grid-v2">
         <?php if ($team_query->have_posts()) : ?>
           <?php while ($team_query->have_posts()) : $team_query->the_post(); ?>
             <?php
@@ -42,15 +42,18 @@ $team_query = new WP_Query([
             $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
             $alt   = esc_attr($name);
             ?>
-            <div class="team-card" data-reveal>
-              <?php if ($thumb) : ?>
-                <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo $alt; ?>">
-              <?php else : ?>
-                <div style="width:100%;height:280px;background:var(--off-white);display:flex;align-items:center;justify-content:center;">
-                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </div>
-              <?php endif; ?>
-              <div class="team-info">
+            <div class="team-card-v2" data-reveal>
+              <div class="team-image-frame">
+                <?php if ($thumb) : ?>
+                  <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo $alt; ?>">
+                <?php else : ?>
+                  <div class="team-placeholder">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                <?php endif; ?>
+                <div class="team-frame-accent"></div>
+              </div>
+              <div class="team-info-v2">
                 <h3><?php echo esc_html($name); ?></h3>
                 <?php if ($role) : ?>
                   <div class="role"><?php echo esc_html($role); ?></div>
@@ -60,7 +63,7 @@ $team_query = new WP_Query([
           <?php endwhile; ?>
           <?php wp_reset_postdata(); ?>
         <?php else : ?>
-          <p style="color:var(--text-mid);padding:2rem 0;">No team members have been added yet. Go to <strong>Team Members</strong> in the WordPress admin to add them.</p>
+          <p style="color:var(--text-mid);padding:2rem 0;grid-column:1/-1;">No team members have been added yet. Go to <strong>Team Members</strong> in the WordPress admin to add them.</p>
         <?php endif; ?>
       </div>
     </div>
