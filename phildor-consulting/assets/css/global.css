@@ -25,6 +25,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  height: -webkit-fill-available;
 }
 
 body {
@@ -33,6 +34,8 @@ body {
   background: var(--white);
   overflow-x: hidden;
   line-height: 1.6;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 img {
@@ -159,7 +162,9 @@ section {
 .page-hero {
   min-height: 320px;
   background: var(--purple-dark);
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: flex-end;
   align-items: flex-end;
   padding: 0 1.5rem 2.5rem;
   position: relative;
@@ -169,7 +174,10 @@ section {
 
 .page-hero-bg {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 0;
   background-size: cover;
   background-position: center;
@@ -185,6 +193,7 @@ section {
   height: auto;
   z-index: 1;
   background: var(--white);
+  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
   padding-top: 25px;
 }
@@ -239,18 +248,22 @@ section {
 .bg-offwhite { background: var(--off-white); }
 .bg-purple   { background: var(--purple-dark); }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+@-webkit-keyframes fadeUp {
+  from { opacity: 0; -webkit-transform: translateY(28px); transform: translateY(28px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
 }
 
-.fade-up          { animation: fadeUp 0.75s ease both; }
-.fade-up.delay-1  { animation-delay: 0.1s; }
-.fade-up.delay-2  { animation-delay: 0.25s; }
-.fade-up.delay-3  { animation-delay: 0.4s; }
-.fade-up.delay-4  { animation-delay: 0.55s; }
+@keyframes fadeUp {
+  from { opacity: 0; -webkit-transform: translateY(28px); transform: translateY(28px); }
+  to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+}
 
-/* Tablet */
+.fade-up          { -webkit-animation: fadeUp 0.75s ease both; animation: fadeUp 0.75s ease both; }
+.fade-up.delay-1  { -webkit-animation-delay: 0.1s; animation-delay: 0.1s; }
+.fade-up.delay-2  { -webkit-animation-delay: 0.25s; animation-delay: 0.25s; }
+.fade-up.delay-3  { -webkit-animation-delay: 0.4s; animation-delay: 0.4s; }
+.fade-up.delay-4  { -webkit-animation-delay: 0.55s; animation-delay: 0.55s; }
+
 @media (min-width: 768px) {
   .container {
     padding: 0 2rem;
@@ -297,7 +310,6 @@ section {
   }
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
   .container {
     padding: 0 2rem;
@@ -341,7 +353,6 @@ section {
   }
 }
 
-/* Large Desktop */
 @media (min-width: 1280px) {
   .container {
     padding: 0;
@@ -358,8 +369,11 @@ section {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
+    -webkit-animation-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
 }
