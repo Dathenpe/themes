@@ -193,13 +193,14 @@
   position: relative;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--light-grey);
 }
 
 .service-num {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--light-grey);
+  color: rgba(59, 31, 110, 0.15);
   line-height: 1;
   margin-bottom: 0.75rem;
 }
@@ -215,7 +216,7 @@
   font-size: 0.8rem;
   color: var(--text-mid);
   line-height: 1.6;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .team-grid {
@@ -274,7 +275,7 @@
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(35,15,71,0.95) 0%, rgba(35,15,71,0.08) 55%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 55%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -288,6 +289,7 @@
   color: var(--gold);
   font-weight: 600;
   margin-bottom: 0.35rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .project-title {
@@ -296,13 +298,15 @@
   color: var(--white);
   font-weight: 600;
   line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .project-desc {
   font-size: 0.7rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.85);
   margin-top: 0.35rem;
   display: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .project-card:hover .project-desc {

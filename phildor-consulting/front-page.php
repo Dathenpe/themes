@@ -9,7 +9,7 @@ $uri = get_template_directory_uri();
   <div id="hero-slider">
 
     <div class="slider-slide active">
-      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/slide_1_spherical_tanks.jpg');"></div>
+      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/rig.jpg');"></div>
       <div class="slider-overlay"></div>
       <div class="slider-overlay-bottom"></div>
       <div class="slider-content">
@@ -26,7 +26,7 @@ $uri = get_template_directory_uri();
     </div>
 
     <div class="slider-slide">
-      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/slide_2_ship_dockyard.jpg');"></div>
+      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/lpg.jpg');"></div>
       <div class="slider-overlay"></div>
       <div class="slider-overlay-bottom"></div>
       <div class="slider-content">
@@ -43,7 +43,7 @@ $uri = get_template_directory_uri();
     </div>
 
     <div class="slider-slide">
-      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/slide_3_construction.jpg');"></div>
+      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/construction.jpg');"></div>
       <div class="slider-overlay"></div>
       <div class="slider-overlay-bottom"></div>
       <div class="slider-content">
@@ -60,7 +60,7 @@ $uri = get_template_directory_uri();
     </div>
 
     <div class="slider-slide">
-      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/slide_4_foundation.jpg');"></div>
+      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/foundation.jpg');"></div>
       <div class="slider-overlay"></div>
       <div class="slider-overlay-bottom"></div>
       <div class="slider-content">
@@ -77,7 +77,7 @@ $uri = get_template_directory_uri();
     </div>
 
     <div class="slider-slide">
-      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/slide_5_cng.jpg');"></div>
+      <div class="slider-bg" style="background-image:url('<?php echo $uri; ?>/assets/images/cng.jpg');"></div>
       <div class="slider-overlay"></div>
       <div class="slider-overlay-bottom"></div>
       <div class="slider-content">

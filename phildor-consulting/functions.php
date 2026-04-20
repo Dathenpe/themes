@@ -220,7 +220,7 @@ function phildor_get_nav_html() {
         'Projects'       => 'projects',
         'Clients'        => 'clients',
         'Certifications' => 'certifications',
-        'HSE'            => 'hse',
+        'HSE & QA/QC'    => 'hse',
         'Why Us'         => 'why-us',
     ];
 
@@ -231,6 +231,7 @@ function phildor_get_nav_html() {
     $out  = '<nav id="navbar">';
     $out .= '<a class="nav-logo" href="' . esc_url($home_url) . '">';
     $out .= '<img src="' . esc_url($logo_url) . '" alt="Phildor Consulting Limited" class="nav-logo-img">';
+    $out .= '<span class="nav-logo-text">Phildor Consulting Limited</span>';
     $out .= '</a>';
     $out .= '<ul class="nav-links">';
 
@@ -273,7 +274,7 @@ function phildor_get_nav_html() {
         $out .= '<a href="' . esc_url($url) . '"' . $active . '>' . esc_html($label) . '</a>';
     }
     $contact_mobile_active = is_page('contact') ? ' class="active"' : '';
-    $out .= '<a href="' . esc_url($contact_url) . '"' . $contact_mobile_active . ' style="color:var(--gold);">Contact Us</a>';
+    $out .= '<a href="' . esc_url($contact_url) . '"' . $contact_mobile_active . ' style="color:var(--purple-dark);">Contact Us</a>';
     $out .= '</div>';
 
     return $out;
@@ -310,7 +311,7 @@ function phildor_get_footer_html() {
     $out .= '<li><a href="' . esc_url($about_url) . '#vision">Vision &amp; Mission</a></li>';
     $out .= '<li><a href="' . esc_url($team_url) . '">Management Team</a></li>';
     $out .= '<li><a href="' . esc_url($certs_url) . '">Certifications</a></li>';
-    $out .= '<li><a href="' . esc_url($hse_url) . '">HSE Policy</a></li>';
+    $out .= '<li><a href="' . esc_url($hse_url) . '">HSE &amp; QA/QC Policy</a></li>';
     $out .= '</ul></div>';
     $out .= '<div class="footer-col"><h4>Services</h4><ul>';
     $out .= '<li><a href="' . esc_url($services_url) . '">Engineering Services</a></li>';

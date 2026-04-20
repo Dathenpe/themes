@@ -129,13 +129,14 @@
   padding: 1.75rem;
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--light-grey);
 }
 
 .svc-num {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--light-grey);
+  color: rgba(59, 31, 110, 0.15);
   line-height: 1;
   margin-bottom: 0.75rem;
 }
@@ -151,7 +152,23 @@
   font-size: 0.8rem;
   color: var(--text-mid);
   line-height: 1.6;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.svc-card-cta {
+  background: var(--purple-dark);
+}
+
+.svc-card-cta .svc-num {
+  color: rgba(201, 168, 76, 0.3);
+}
+
+.svc-card-cta h3 {
+  color: var(--white);
+}
+
+.svc-card-cta p {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .svc-card-cta .btn-primary {
@@ -187,7 +204,7 @@
 .proj-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(35,15,71,0.94) 0%, rgba(35,15,71,0.08) 60%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -201,6 +218,7 @@
   color: var(--gold);
   font-weight: 600;
   margin-bottom: 0.35rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .proj-title {
@@ -209,6 +227,7 @@
   color: var(--white);
   font-weight: 600;
   line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .why-strip-grid {

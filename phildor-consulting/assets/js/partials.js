@@ -2,6 +2,7 @@
   var NAV_HTML = '<nav id="navbar">'
     + '<a class="nav-logo" href="index.html">'
     + '<img src="assets/images/pcl_logo.png" alt="Phildor Consulting Limited" class="nav-logo-img">'
+    + '<span class="nav-logo-text">Phildor Consulting Limited</span>'
     + '</a>'
     + '<ul class="nav-links">'
     +   '<li><a href="index.html">Home</a></li>'
@@ -11,7 +12,7 @@
     +   '<li><a href="projects.html">Projects</a></li>'
     +   '<li><a href="clients.html">Clients</a></li>'
     +   '<li><a href="certifications.html">Certifications</a></li>'
-    +   '<li><a href="hse.html">HSE</a></li>'
+    +   '<li><a href="hse.html">HSE & QA/QC</a></li>'
     +   '<li><a href="why-us.html">Why Us</a></li>'
     + '</ul>'
     + '<a class="nav-cta" href="contact.html">Contact Us</a>'
@@ -27,9 +28,9 @@
     +   '<a href="projects.html">Projects</a>'
     +   '<a href="clients.html">Clients</a>'
     +   '<a href="certifications.html">Certifications</a>'
-    +   '<a href="hse.html">HSE</a>'
+    +   '<a href="hse.html">HSE & QA/QC</a>'
     +   '<a href="why-us.html">Why Us</a>'
-    +   '<a href="contact.html" style="color:var(--gold);">Contact Us</a>'
+    +   '<a href="contact.html" style="color:var(--purple-dark);">Contact Us</a>'
     + '</div>';
 
   var currentYear = new Date().getFullYear();
@@ -48,7 +49,7 @@
     +       '<li><a href="about.html#vision">Vision & Mission</a></li>'
     +       '<li><a href="team.html">Management Team</a></li>'
     +       '<li><a href="certifications.html">Certifications</a></li>'
-    +       '<li><a href="hse.html">HSE Policy</a></li>'
+    +       '<li><a href="hse.html">HSE & QA/QC Policy</a></li>'
     +     '</ul>'
     +   '</div>'
     +   '<div class="footer-col">'
